@@ -1,0 +1,115 @@
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>恢复合并列</title>
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap@4.0.0/dist/css/bootstrap.css"/>
+    <script type="text/javascript" src="https://unpkg.com/jquery@3.3.1/dist/jquery.js"></script>
+    <script type="text/javascript" src="../src/jquery.mergeCells.js"></script>
+    <style>
+        .hide {
+            display: none;
+        }
+
+        table td, table th {
+            text-align: center;
+        }
+
+        td[rowspan] {
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <h4>恢复合并列，但不恢复表格</h4>
+            <table id="table1" class="table table-bordered">
+                <thead>
+                <tr>
+                    <th>列1</th>
+                    <th>列2</th>
+                    <th>列3</th>
+                    <th>列4</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td rowspan="2">内容1</td>
+                    <td rowspan="2">内容1</td>
+                    <td rowspan="2">内容3</td>
+                    <td>内容4</td>
+                </tr>
+                <tr>
+                    <td>内容4</td>
+                </tr>
+                <tr>
+                    <td rowspan="2">内容2</td>
+                    <td rowspan="1">内容1</td>
+                    <td rowspan="2">内容3</td>
+                    <td>内容4</td>
+                </tr>
+                <tr>
+                    <td rowspan="1">内容2</td>
+                    <td>内容4</td>
+                </tr>
+                <tr>
+                    <td rowspan="1">内容3</td>
+                    <td rowspan="1">内容2</td>
+                    <td rowspan="1">内容3</td>
+                    <td>内容4</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-md-6">
+            <h4>恢复合并列，并恢复表格</h4>
+            <table id="table2" class="table table-bordered">
+                <thead>
+                <tr>
+                    <th>列1</th>
+                    <th>列2</th>
+                    <th>列3</th>
+                    <th>列4</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td rowspan="2">内容1</td>
+                    <td rowspan="2">内容1</td>
+                    <td rowspan="2">内容3</td>
+                    <td>内容4</td>
+                </tr>
+                <tr>
+                    <td>内容4</td>
+                </tr>
+                <tr>
+                    <td rowspan="2">内容2</td>
+                    <td rowspan="1">内容1</td>
+                    <td rowspan="2">内容3</td>
+                    <td>内容4</td>
+                </tr>
+                <tr>
+                    <td rowspan="1">内容2</td>
+                    <td>内容4</td>
+                </tr>
+                <tr>
+                    <td rowspan="1">内容3</td>
+                    <td rowspan="1">内容2</td>
+                    <td rowspan="1">内容3</td>
+                    <td>内容4</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>
+<script>
+    $(function () {
+        $('#table1').mergeRecover(true);
+        $('#table2').mergeRecover();
+    });
+</script>
+</body>
+</html>
